@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import ports from './ports.json' with { type: 'json' };
+import ports from './public/ports.json' with { type: 'json' };
 let serverPort = ports.server;
 function postTestResult(allResults, QUnit) {
   if (isCancelled()) {

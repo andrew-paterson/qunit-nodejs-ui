@@ -2,3 +2,5 @@ node_modules
 tmp/
 notes.md
 default-qunit
+ports.json
+ports.js

@@ -7,7 +7,6 @@ const parsedQueryParams = getUrlParams();
 if (parsedQueryParams.initialise) {
   document.querySelector('body').classList.add('initialise');
 }
-const serverPort = parsedQueryParams.server_port || '3000';
 
 function testStart(details) {
   var running, bad;

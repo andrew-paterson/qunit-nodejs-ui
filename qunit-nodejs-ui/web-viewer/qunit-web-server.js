@@ -10,10 +10,16 @@ const livereloadPort = nodeSundries.getNamedArgVal('--ui-port') || 8000;
 const resultsUpdatedWsPort =
   nodeSundries.getNamedArgVal('--server-port') || 3000;
 
-import ports from './ports.json' with { type: 'json' };
-ports.ui = livereloadPort;
-ports.server = resultsUpdatedWsPort;
-fs.writeFileSync('./ports.json', JSON.stringify(ports, null, 2));
+const ports = {
+  ui: livereloadPort,
+  server: resultsUpdatedWsPort,
+};
+fs.writeFileSync('./public/ports.json', JSON.stringify(ports, null, 2));
+fs.writeFileSync(
+  './public/ports.js',
+  `const uiPort = ${ports.ui};\nconst serverPort = ${ports.server}`,
+);
+
 const pathToTestRunnerScript =
   nodeSundries.getNamedArgVal('--test-runner-path');
 // Create a livereload server and watch your public directory
