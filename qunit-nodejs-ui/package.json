@@ -1,14 +1,14 @@
 {
   "name": "qunit-nodejs-ui",
   "version": "0.0.1",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "Andrew Paterson",
   "license": "ISC",
-  "description": "",
+  "description": "QUnit UI for tests run in Nodejs",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-paterson/qunit-node-js.git"
+  },
   "devDependencies": {
     "@dotenvx/dotenvx": "^1.24.4",
     "@eslint/eslintrc": "^3.2.0",

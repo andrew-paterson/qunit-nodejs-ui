@@ -74,7 +74,7 @@ uiTestRunner(testModules);
 
 ## Usage example
 
-`git clone https://github.com/andrew-paterson/qunit-nodejs-ui`
+`git clone git@github.com:andrew-paterson/qunit-nodejs-ui.git`
 
 `npm install`
 
