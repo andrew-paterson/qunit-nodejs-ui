@@ -1,0 +1,48 @@
+function fetchResponse(url) {
+  return new Promise((resolve, reject) => {
+    fetch(url).then((res) => {
+      const text = res.text();
+      let responseText;
+      try {
+        responseText = JSON.parse(text);
+      } catch (err) {
+        responseText = text;
+      }
+      resolve(responseText);
+    });
+  });
+}
+
+export default [
+  {
+    moduleName: 'Module',
+    tests: [
+      {
+        name: 'test',
+        fn: async (assert) => {
+          assert.equal(1, 1);
+        },
+      },
+      {
+        name: 'Test HTML page passing',
+        fn: async (assert) => {
+          const response = await fetchResponse('https://example.com');
+          assert.equal(
+            response.trim(),
+            `<!doctype html><html lang="en"><head><title>Example Domain</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style></head><body><div><h1>Example Domain</h1><p>This domain is for use in documentation examples without needing permission. Avoid use in operations.</p><p><a href="https://iana.org/domains/example">Learn more</a></p></div></body></html>`,
+          );
+        },
+      },
+      {
+        name: 'Test HTML page failing',
+        fn: async (assert) => {
+          const response = await fetchResponse('https://example.com');
+          assert.equal(
+            response.trim(),
+            `<!doctype html><html lang="en"><head><title>Example Domain</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style></head><body><div><h1>Example Dooooooooomain</h1><p>This domain is for use in documentation examples without needing permission. Avoid use in operations.</p><p><a href="https://iana.org/domains/example">Learn more</a></p></div></body></html>`,
+          );
+        },
+      },
+    ],
+  },
+];

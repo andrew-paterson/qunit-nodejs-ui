@@ -1,0 +1,32 @@
+{
+  "name": "qunit-nodejs-ui",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.24.4",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.15.0",
+    "axios": "^1.7.7",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "express": "^5.1.0",
+    "form-data": "^4.0.1",
+    "globals": "^15.12.0",
+    "jsdom": "^26.1.0",
+    "livereload": "^0.10.3",
+    "mkdirp": "^3.0.1",
+    "node-sundries": "0.0.12",
+    "prettier": "^3.3.3",
+    "qunit": "^2.25.0",
+    "ws": "^8.18.3",
+    "xml2js": "^0.6.2"
+  }
+}
