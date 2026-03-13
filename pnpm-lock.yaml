@@ -63,12 +63,6 @@ importers:
         specifier: ^0.6.2
         version: 0.6.2
 
-  test-app:
-    devDependencies:
-      qunit-nodejs-ui:
-        specifier: workspace:*
-        version: link:../qunit-nodejs-ui
-
 packages:
 
   '@asamuzakjp/css-color@3.2.0':

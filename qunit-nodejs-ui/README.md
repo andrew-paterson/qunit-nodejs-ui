@@ -8,14 +8,14 @@ Adds the functionality of the QUnit browser UI to QUnit tests run in Nodejs.
 - Refreshing the browser window reruns tests
 - Click the rerun link of any test to run it again.
 - Click the "Rerun failed tests" link after a test run completes to rerun all failed tests.
-- Use the QUnit modules dropdopwn to select any subset of test modules to run.
+- Use the QUnit modules dropdown to select any subset of test modules to run.
 - Use the filter input to run only tests where the module name and title match the string passed.
-- Applies the QUnit browser diff feature to show the diff between expectaions and results where tests fail.
+- Applies the QUnit browser diff feature to show the diff between expectations and results where tests fail.
 
 ## Additional features
 
-- Where the expectaion or result of an assertion is valid HTML, it is rendered in the browser.
-- Adds copy buttons to the expectaions and results of assertions.
+- Where the expectation or result of an assertion is valid HTML, it is rendered in the browser.
+- Adds copy buttons to the expectations and results of assertions.
 
 # How it works
 
@@ -23,7 +23,7 @@ An small express server starts both a web server and a UI.
 
 The server opens a web socket connection which the UI joins.
 
-Tests are run using the imported test runner module. This module sends data to the server when the QuUnit event bacllbacks occur, and the server forwards those to the UI.
+Tests are run using the imported test runner module. This module sends data to the server when the QuUnit event callbacks occur, and the server forwards those to the UI.
 
 Conversely, the UI sends a message back to the server to initiate a test run whenever the page is reloaded. The UI query params are included, which enables the implementation of features listed above.
 
@@ -42,11 +42,11 @@ Both `--server-port` and `ui-port` are optional, and can be used to customise th
 
 ## Tests file
 
-The tests need to be defined as an array of objects as in the example below, rather than by calling the QUnit methods in the nomral way, which looks like this: `QUnit.module('My module', function () {...}`
+The tests need to be defined as an array of objects as in the example below, rather than by calling the QUnit methods in the normal way, which looks like this: `QUnit.module('My module', function () {...}`
 
 This is because the test runner needs to generate the unique hash for each test (A hash of the module concatenated with test name), in the same way the the QUnit browser code does.
 
-The QUnit broser code adds these hashes to the url query params when we use UI cointrols to run specuirfic tests or modules.
+The QUnit browser code adds these hashes to the url query params when we use UI controls to run specific tests or modules.
 
 By passing the test runner an array of objects, as shown in `testModules` below, the test runner can determine the hashes of the tests and filter them appropriately.
 
@@ -74,7 +74,7 @@ uiTestRunner(testModules);
 
 ## Usage example
 
-`git clone https://github.com/andrew-paterson/qunit-nodejs-ui`
+`git clone git@github.com:andrew-paterson/qunit-nodejs-ui.git`
 
 `npm install`
 

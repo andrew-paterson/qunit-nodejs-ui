@@ -10,6 +10,6 @@
   "description": "",
   "type": "module",
   "devDependencies": {
-    "qunit-nodejs-ui": "workspace:*"
+    "qunit-nodejs-ui": "0.0.1"
   }
 }
